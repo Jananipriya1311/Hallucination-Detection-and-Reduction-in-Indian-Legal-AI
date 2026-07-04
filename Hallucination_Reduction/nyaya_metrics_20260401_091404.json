@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-04-01T09:14:04.277912",
+  "system": "Nyaya AI with RAG + IndianKanoon + Llama + InLegalBERT",
+  "hallucination_metrics": {
+    "avg_score": 0.13999999999999999,
+    "std_dev": 0.12274635093014646,
+    "high_risk_count": 1,
+    "low_risk_count": 13
+  },
+  "citation_metrics": {
+    "avg_score": 0.45500000000000007,
+    "citation_rate": 0.7
+  },
+  "consistency_metrics": {
+    "avg_consistency": 0.3882422270482621
+  },
+  "performance_metrics": {
+    "avg_latency": 3.6893769264221192,
+    "p95_latency": 4.2847426414489735,
+    "success_rate": 1.0
+  },
+  "uncertainty_metrics": {
+    "avg_uncertainty_score": 0.16,
+    "disclaimer_rate": 1.0
+  },
+  "overall_score": 0.5733984454096525
+}

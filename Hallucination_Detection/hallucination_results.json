@@ -1,0 +1,443 @@
+{
+  "tests": [
+    {
+      "name": "Real vs Fake Section (302 vs 999)",
+      "similarity": 0.9266078472137451,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.927 similarity",
+      "risk_level": "high",
+      "text_a": "Section 302 IPC deals with punishment for murder.",
+      "text_b": "Section 999 IPC deals with punishment for murder."
+    },
+    {
+      "name": "Real vs Non-existent High Number",
+      "similarity": 0.8735921382904053,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.874 similarity",
+      "risk_level": "high",
+      "text_a": "Section 376 IPC - punishment for rape.",
+      "text_b": "Section 9999 IPC - punishment for rape."
+    },
+    {
+      "name": "Two Different Real Sections",
+      "similarity": 0.5694701075553894,
+      "expected": "different",
+      "is_hallucination": false,
+      "reason": "\u2705 Good separation: 0.569",
+      "risk_level": "high",
+      "text_a": "Section 302 IPC (murder) punishment is death or life imprisonment.",
+      "text_b": "Section 304 IPC (culpable homicide) punishment is 10 years or life."
+    },
+    {
+      "name": "Real vs Real (Similar Domains)",
+      "similarity": 0.07698670029640198,
+      "expected": "different",
+      "is_hallucination": false,
+      "reason": "\u2705 Good separation: 0.077",
+      "risk_level": "high",
+      "text_a": "Section 376 IPC - rape, minimum 7 years.",
+      "text_b": "Section 354 IPC - assault, up to 2 years."
+    },
+    {
+      "name": "Guilty vs Not Guilty",
+      "similarity": 0.9966099262237549,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.997 similarity",
+      "risk_level": "critical",
+      "text_a": "The accused is guilty of murder under Section 302.",
+      "text_b": "The accused is NOT guilty of murder under Section 302."
+    },
+    {
+      "name": "Convicted vs Acquitted",
+      "similarity": 0.9906188249588013,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.991 similarity",
+      "risk_level": "critical",
+      "text_a": "The court convicted the defendant for theft.",
+      "text_b": "The court acquitted the defendant of theft."
+    },
+    {
+      "name": "With vs Without Consent",
+      "similarity": 0.9959020614624023,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.996 similarity",
+      "risk_level": "critical",
+      "text_a": "The act was done with consent of the victim.",
+      "text_b": "The act was done without consent of the victim."
+    },
+    {
+      "name": "Sanctioned vs Not Sanctioned",
+      "similarity": 0.8430187106132507,
+      "expected": "different",
+      "is_hallucination": false,
+      "reason": "\u26a0\ufe0f Borderline: 0.843 similarity (expected <0.75)",
+      "risk_level": "critical",
+      "text_a": "The government sanctioned the project.",
+      "text_b": "The government did NOT sanction the project."
+    },
+    {
+      "name": "Maharashtra vs Karnataka Law",
+      "similarity": 0.9778795838356018,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.978 similarity",
+      "risk_level": "medium",
+      "text_a": "The Maharashtra Rent Control Act applies to properties in Mumbai.",
+      "text_b": "The Karnataka Rent Control Act applies to properties in Bangalore."
+    },
+    {
+      "name": "Supreme Court vs High Court",
+      "similarity": 0.9848819971084595,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.985 similarity",
+      "risk_level": "medium",
+      "text_a": "The Supreme Court of India has appellate jurisdiction.",
+      "text_b": "The Delhi High Court has appellate jurisdiction."
+    },
+    {
+      "name": "Civil vs Criminal Court",
+      "similarity": 0.9877567291259766,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.988 similarity",
+      "risk_level": "medium",
+      "text_a": "The civil court has jurisdiction over property disputes.",
+      "text_b": "The criminal court has jurisdiction over theft cases."
+    },
+    {
+      "name": "State vs Central Law",
+      "similarity": 0.9713197946548462,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.971 similarity",
+      "risk_level": "medium",
+      "text_a": "Under the Uttar Pradesh Prohibition Act.",
+      "text_b": "Under the Central Prohibition Act."
+    },
+    {
+      "name": "IPC (1860) vs BNS (2023) - Murder",
+      "similarity": 0.8974170684814453,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.897 similarity",
+      "risk_level": "high",
+      "text_a": "Section 302 IPC: Punishment for murder is death or life imprisonment.",
+      "text_b": "Section 101 BNS: Punishment for murder is death or life imprisonment."
+    },
+    {
+      "name": "IPC vs BNS - Theft",
+      "similarity": 0.43372806906700134,
+      "expected": "different",
+      "is_hallucination": false,
+      "reason": "\u2705 Good separation: 0.434",
+      "risk_level": "high",
+      "text_a": "Section 378 IPC defines theft.",
+      "text_b": "Section 303 BNS defines theft."
+    },
+    {
+      "name": "Companies Act 1956 vs 2013",
+      "similarity": 0.945961594581604,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.946 similarity",
+      "risk_level": "high",
+      "text_a": "Section 271 of Companies Act 1956 deals with winding up.",
+      "text_b": "Section 271 of Companies Act 2013 deals with winding up."
+    },
+    {
+      "name": "IT Act 2000 vs DPDP Act 2023",
+      "similarity": 0.8143845796585083,
+      "expected": "different",
+      "is_hallucination": false,
+      "reason": "\u26a0\ufe0f Borderline: 0.814 similarity (expected <0.75)",
+      "risk_level": "high",
+      "text_a": "Section 43 of IT Act 2000 deals with data protection.",
+      "text_b": "Section 8 of DPDP Act 2023 deals with data protection."
+    },
+    {
+      "name": "Fake Law vs Real Law",
+      "similarity": 0.9908331632614136,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.991 similarity",
+      "risk_level": "medium",
+      "text_a": "Under the Digital Personal Data Protection Act, 2023.",
+      "text_b": "Under the Information Technology Act, 2000."
+    },
+    {
+      "name": "Non-legal vs Legal Text",
+      "similarity": 0.9612568616867065,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.961 similarity",
+      "risk_level": "medium",
+      "text_a": "The stock market crashed by 5% today.",
+      "text_b": "The court dismissed the petition due to lack of evidence."
+    },
+    {
+      "name": "Random vs Legal Concept",
+      "similarity": 0.9697524309158325,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.970 similarity",
+      "risk_level": "medium",
+      "text_a": "Quantum physics explains the behavior of particles.",
+      "text_b": "Quantum meruit is a legal doctrine for unjust enrichment."
+    },
+    {
+      "name": "Fictional vs Real Case",
+      "similarity": 0.0895034447312355,
+      "expected": "different",
+      "is_hallucination": false,
+      "reason": "\u2705 Good separation: 0.090",
+      "risk_level": "medium",
+      "text_a": "The case of Kumar vs State of India (2050).",
+      "text_b": "The case of Kesavananda Bharati vs State of Kerala (1973)."
+    },
+    {
+      "name": "CPC vs CrPC",
+      "similarity": 0.6834492087364197,
+      "expected": "different",
+      "is_hallucination": false,
+      "reason": "\u2705 Good separation: 0.683",
+      "risk_level": "high",
+      "text_a": "Order 39 CPC deals with temporary injunctions.",
+      "text_b": "Section 144 CrPC deals with temporary orders."
+    },
+    {
+      "name": "Civil Suit vs Criminal Case",
+      "similarity": 0.9687947034835815,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.969 similarity",
+      "risk_level": "high",
+      "text_a": "The plaintiff filed a suit for recovery of money.",
+      "text_b": "The state filed a case for theft under IPC."
+    },
+    {
+      "name": "Tort vs Crime",
+      "similarity": -0.017417825758457184,
+      "expected": "different",
+      "is_hallucination": false,
+      "reason": "\u2705 Good separation: -0.017",
+      "risk_level": "high",
+      "text_a": "The defendant committed negligence causing injury.",
+      "text_b": "The accused committed assault causing injury."
+    },
+    {
+      "name": "Remedies: Damages vs Imprisonment",
+      "similarity": 0.9759826064109802,
+      "expected": "different",
+      "is_hallucination": true,
+      "reason": "Should be different but got 0.976 similarity",
+      "risk_level": "high",
+      "text_a": "The court awarded monetary damages to the plaintiff.",
+      "text_b": "The court sentenced the accused to 5 years imprisonment."
+    }
+  ],
+  "hallucination_score": 0.6666666666666666,
+  "risk_areas": {
+    "Real vs Fake Section (302 vs 999)": [
+      {
+        "name": "Real vs Fake Section (302 vs 999)",
+        "similarity": 0.9266078472137451,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.927 similarity",
+        "risk_level": "high",
+        "text_a": "Section 302 IPC deals with punishment for murder.",
+        "text_b": "Section 999 IPC deals with punishment for murder."
+      }
+    ],
+    "Real vs Non-existent High Number": [
+      {
+        "name": "Real vs Non-existent High Number",
+        "similarity": 0.8735921382904053,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.874 similarity",
+        "risk_level": "high",
+        "text_a": "Section 376 IPC - punishment for rape.",
+        "text_b": "Section 9999 IPC - punishment for rape."
+      }
+    ],
+    "Guilty vs Not Guilty": [
+      {
+        "name": "Guilty vs Not Guilty",
+        "similarity": 0.9966099262237549,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.997 similarity",
+        "risk_level": "critical",
+        "text_a": "The accused is guilty of murder under Section 302.",
+        "text_b": "The accused is NOT guilty of murder under Section 302."
+      }
+    ],
+    "Convicted vs Acquitted": [
+      {
+        "name": "Convicted vs Acquitted",
+        "similarity": 0.9906188249588013,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.991 similarity",
+        "risk_level": "critical",
+        "text_a": "The court convicted the defendant for theft.",
+        "text_b": "The court acquitted the defendant of theft."
+      }
+    ],
+    "With vs Without Consent": [
+      {
+        "name": "With vs Without Consent",
+        "similarity": 0.9959020614624023,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.996 similarity",
+        "risk_level": "critical",
+        "text_a": "The act was done with consent of the victim.",
+        "text_b": "The act was done without consent of the victim."
+      }
+    ],
+    "Maharashtra vs Karnataka Law": [
+      {
+        "name": "Maharashtra vs Karnataka Law",
+        "similarity": 0.9778795838356018,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.978 similarity",
+        "risk_level": "medium",
+        "text_a": "The Maharashtra Rent Control Act applies to properties in Mumbai.",
+        "text_b": "The Karnataka Rent Control Act applies to properties in Bangalore."
+      }
+    ],
+    "Supreme Court vs High Court": [
+      {
+        "name": "Supreme Court vs High Court",
+        "similarity": 0.9848819971084595,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.985 similarity",
+        "risk_level": "medium",
+        "text_a": "The Supreme Court of India has appellate jurisdiction.",
+        "text_b": "The Delhi High Court has appellate jurisdiction."
+      }
+    ],
+    "Civil vs Criminal Court": [
+      {
+        "name": "Civil vs Criminal Court",
+        "similarity": 0.9877567291259766,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.988 similarity",
+        "risk_level": "medium",
+        "text_a": "The civil court has jurisdiction over property disputes.",
+        "text_b": "The criminal court has jurisdiction over theft cases."
+      }
+    ],
+    "State vs Central Law": [
+      {
+        "name": "State vs Central Law",
+        "similarity": 0.9713197946548462,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.971 similarity",
+        "risk_level": "medium",
+        "text_a": "Under the Uttar Pradesh Prohibition Act.",
+        "text_b": "Under the Central Prohibition Act."
+      }
+    ],
+    "IPC (1860) vs BNS (2023) - Murder": [
+      {
+        "name": "IPC (1860) vs BNS (2023) - Murder",
+        "similarity": 0.8974170684814453,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.897 similarity",
+        "risk_level": "high",
+        "text_a": "Section 302 IPC: Punishment for murder is death or life imprisonment.",
+        "text_b": "Section 101 BNS: Punishment for murder is death or life imprisonment."
+      }
+    ],
+    "Companies Act 1956 vs 2013": [
+      {
+        "name": "Companies Act 1956 vs 2013",
+        "similarity": 0.945961594581604,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.946 similarity",
+        "risk_level": "high",
+        "text_a": "Section 271 of Companies Act 1956 deals with winding up.",
+        "text_b": "Section 271 of Companies Act 2013 deals with winding up."
+      }
+    ],
+    "Fake Law vs Real Law": [
+      {
+        "name": "Fake Law vs Real Law",
+        "similarity": 0.9908331632614136,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.991 similarity",
+        "risk_level": "medium",
+        "text_a": "Under the Digital Personal Data Protection Act, 2023.",
+        "text_b": "Under the Information Technology Act, 2000."
+      }
+    ],
+    "Non-legal vs Legal Text": [
+      {
+        "name": "Non-legal vs Legal Text",
+        "similarity": 0.9612568616867065,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.961 similarity",
+        "risk_level": "medium",
+        "text_a": "The stock market crashed by 5% today.",
+        "text_b": "The court dismissed the petition due to lack of evidence."
+      }
+    ],
+    "Random vs Legal Concept": [
+      {
+        "name": "Random vs Legal Concept",
+        "similarity": 0.9697524309158325,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.970 similarity",
+        "risk_level": "medium",
+        "text_a": "Quantum physics explains the behavior of particles.",
+        "text_b": "Quantum meruit is a legal doctrine for unjust enrichment."
+      }
+    ],
+    "Civil Suit vs Criminal Case": [
+      {
+        "name": "Civil Suit vs Criminal Case",
+        "similarity": 0.9687947034835815,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.969 similarity",
+        "risk_level": "high",
+        "text_a": "The plaintiff filed a suit for recovery of money.",
+        "text_b": "The state filed a case for theft under IPC."
+      }
+    ],
+    "Remedies": [
+      {
+        "name": "Remedies: Damages vs Imprisonment",
+        "similarity": 0.9759826064109802,
+        "expected": "different",
+        "is_hallucination": true,
+        "reason": "Should be different but got 0.976 similarity",
+        "risk_level": "high",
+        "text_a": "The court awarded monetary damages to the plaintiff.",
+        "text_b": "The court sentenced the accused to 5 years imprisonment."
+      }
+    ]
+  },
+  "avg_similarity": 0.7878454302748045,
+  "total_tests": 24,
+  "hallucination_count": 16,
+  "critical_hallucinations": 3
+}
